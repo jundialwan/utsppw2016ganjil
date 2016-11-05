@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>My Personal Resume</title>
+		<script src="js/jquery-3.1.0.min.js"> </script>
+		<link rel="stylesheet" type="text/css" href="css/mycv.css" >		
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" ><!--no need to change this-->
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" >
+		<script>
+			// check if user logged in or not
+		    if (!(window.sessionStorage.nama && window.sessionStorage.npm)) 
+		    {
+		        // un-authorized
+		        alert('Silakan lakukan login terlebih dahulu');
+
+		        // redirect to index.html
+		        window.location = 'index.html';
+		    }		    
+		</script>
+	</head>
+	<body>
+		<div id="wrapper">
+			<header>
+				<div id="title">
+					<h3>My Personal Resume</h3>
+				</div>
+				<div id="logout-btn">
+					<a id="logout-btn" href="#">
+						<span>logout</span>	
+					</a>					
+				</div>
+			</header>
+			<div id="content">
+				<div class="row">
+					<div class="col-md-6">
+						<div id="profile">
+							<img src="images/photo.png" alt="Smiley face" height="100" width="100">
+							<br/>
+							
+							<h3 id="profile-name"></h3>
+							<p id="profile-address">
+							Faculty of Computer Science, Universitas Indonesia <br/>
+							Building C Room 3307 <br/>
+							UI Depok Campus, Indonesia, 16424 <br/>
+							+62 21 786 3419 <br/>					
+							fulanfulanah@cs.ui.ac.id <br/>
+							</p>
+							<h4>Education</h4>
+							<p id="profile-education">
+								* 2012 - 2013 : Master of Computer Science at Universitas Indonesia (UI) Depok<br/>
+								* 2007 - 2011 : Bachelor of Informatics at Institut Teknologi Sepuluh Nopember (ITS), Surabaya<br/>	
+							</p>
+							
+							
+							<button id="update-profile">Update</button>
+						</div>		
+					</div>
+					<div class="col-md-6">
+						<fieldset name="update-field" class="hide">
+							<div class="form-group">
+								<label for="name-input">Name</label>
+								<input id="name-input" class="form-control" name="name-input" type="text">
+							</div>
+							<div class="form-group">
+								<label for="address-input">Address</label>
+								<textarea name="address-input" class="form-control" id="address-input" cols="30" rows="5"></textarea>						
+							</div>
+							<div class="form-group">
+								<label for="education-input">Education</label>
+								<textarea name="education-input" class="form-control" id="education-input" cols="30" rows="5"></textarea><br>
+							</div>							
+						</fieldset>
+					</div>
+				</div>
+				
+				<div id="friendlist">
+					<p>My Connections:</p>					
+					<ul id="teman-list">
+						
+					</ul>
+				</div>
+				
+				<div id="addfriends">
+					<input type="text" name="npm" id="npmQuery">
+					<input id="cari" type="button" value="cari">
+					<div id="searchresult">
+					</div>					
+				</div>
+			</div>
+		</div>
+
+		<script src="js/home.js" defer="defer"></script>
+	</body>
+</html>
+
